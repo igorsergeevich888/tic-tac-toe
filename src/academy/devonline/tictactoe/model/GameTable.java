@@ -14,14 +14,11 @@
  * limitations under the License.
  */
 
-package academy.devonline.tictactoe;
+package academy.devonline.tictactoe.model;
 
 /**
  * @author devonline
  * @link http://devonline.academy/java
  */
-public class UserMove {
-    public void make(final GameTable gameTable) {
-
-    }
+public class GameTable {
 }
