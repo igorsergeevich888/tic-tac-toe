@@ -28,7 +28,7 @@ import java.util.Random;
 public class ComputerMove {
     public void make(final GameTable gameTable) {
 
-        final Random random = new Random();
+        Random random = new Random();
         while (true) {
             final int row = random.nextInt(3);
             final int col = random.nextInt(3);

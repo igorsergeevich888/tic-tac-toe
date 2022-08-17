@@ -43,7 +43,6 @@ public class DataPrinter {
                 System.out.print("| " + gameTable.getSign(new Cell(i, j)) + " ");
             }
             System.out.println("|");
-
         }
         System.out.println("-------------");
     }
