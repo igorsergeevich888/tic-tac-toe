@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package academy.devonline.tictactoe.component;
+package academy.devonline.tictactoe;
 
+import academy.devonline.tictactoe.component.*;
 import academy.devonline.tictactoe.component.keypad.TerminalNumericKeypadCellNumberConverter;
 
 /**
