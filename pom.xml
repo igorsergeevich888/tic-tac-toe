@@ -90,6 +90,13 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <mainClass>academy.devonline.tictactoe.Launcher</mainClass>
+                            </manifest>
+                        </archive>
+                    </configuration>
                     <version>${maven-jar-plugin.version}</version>
                 </plugin>
                 <plugin>
