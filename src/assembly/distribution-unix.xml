@@ -34,7 +34,7 @@
             <directory>${project.build.directory}</directory>
             <outputDirectory/>
             <includes>
-                <include>*.jar</include>
+                <include>${project.build.finalName}.jar</include>
             </includes>
         </fileSet>
         <fileSet>
@@ -45,6 +45,7 @@
             </includes>
             <lineEnding>unix</lineEnding>
             <fileMode>755</fileMode>
+            <filtered>true</filtered>
         </fileSet>
     </fileSets>
 </assembly>

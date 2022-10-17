@@ -34,7 +34,7 @@
             <directory>${project.build.directory}</directory>
             <outputDirectory/>
             <includes>
-                <include>*.jar</include>
+                <include>${project.build.finalName}.jar</include>
             </includes>
         </fileSet>
         <fileSet>
@@ -44,6 +44,7 @@
                 <include>*.cmd</include>
             </includes>
             <lineEnding>windows</lineEnding>
+            <filtered>true</filtered>
         </fileSet>
     </fileSets>
 </assembly>
