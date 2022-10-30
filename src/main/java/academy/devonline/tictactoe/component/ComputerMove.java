@@ -27,7 +27,9 @@ import static academy.devonline.tictactoe.model.Sign.O;
  * @author devonline
  * @link http://devonline.academy/java
  */
-public class ComputerMove {
+public class ComputerMove implements Move {
+
+    @Override
     public void make(final GameTable gameTable) {
 
         Random random = new Random();
