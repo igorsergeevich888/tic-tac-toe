@@ -66,7 +66,7 @@ public class Game {
                 player.makeMove(gameTable);
                 dataPrinter.printGameTable(gameTable);
                 if (winnerVerifier.isWinner(gameTable, player)) {
-                    System.out.println(player + "WIN!");
+                    System.out.println(player.toString() + "WIN!");
                     printGameOver();
                     return;
                 }

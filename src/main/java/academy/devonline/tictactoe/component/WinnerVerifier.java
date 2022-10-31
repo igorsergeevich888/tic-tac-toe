@@ -28,8 +28,10 @@ import academy.devonline.tictactoe.model.Sign;
 public class WinnerVerifier {
 
     public boolean isWinner(final GameTable gameTable, final Player player) {
-        return isWinnerByRows(gameTable, player.getSign()) || isWinnerByCols(gameTable, player.getSign()) ||
-                isWinnerByMainDiagonal(gameTable, player.getSign()) || isWinnerBySecondDiagonal(gameTable, player.getSign());
+        return isWinnerByRows(gameTable, player.getSign()) ||
+                isWinnerByCols(gameTable, player.getSign()) ||
+                isWinnerByMainDiagonal(gameTable, player.getSign()) ||
+                isWinnerBySecondDiagonal(gameTable, player.getSign());
     }
 
     private boolean isWinnerBySecondDiagonal(final GameTable gameTable, final Sign sign) {
