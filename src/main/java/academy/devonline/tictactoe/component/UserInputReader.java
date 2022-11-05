@@ -16,19 +16,13 @@
 
 package academy.devonline.tictactoe.component;
 
-import academy.devonline.tictactoe.model.GameTable;
+import academy.devonline.tictactoe.model.Cell;
 
 /**
  * @author devonline
  * @link http://devonline.academy/java
  */
-public interface DataPrinter {
-    void printInfoMessage(String message);
+public interface UserInputReader {
 
-    void printErrorMessage(String message);
-
-    void printMappingTable();
-
-    void printGameTable(GameTable gameTable);
-
+    Cell getUserInput();
 }

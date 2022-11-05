@@ -28,7 +28,7 @@ import java.util.Random;
  */
 public class Game {
 
-    private final DataPrinter dataPrinter;
+    private final DataPrinterImpl dataPrinter;
     private final Player player1;
 
     private final Player player2;
@@ -37,7 +37,7 @@ public class Game {
 
     private final boolean canSecondPlaterMakeFirstMove;
 
-    public Game(final DataPrinter dataPrinter,
+    public Game(final DataPrinterImpl dataPrinter,
                 final Player player1,
                 final Player player2,
                 final WinnerVerifier winnerVerifier,
