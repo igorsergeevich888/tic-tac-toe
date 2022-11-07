@@ -61,7 +61,6 @@ public class GameWindow extends JFrame implements DataPrinter, UserInputReader {
                        IllegalAccessException | InstantiationException ex) {
             ex.printStackTrace();
         }
-
     }
 
     private void createGameTable() {
