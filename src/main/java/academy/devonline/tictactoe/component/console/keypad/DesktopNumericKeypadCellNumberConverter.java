@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package academy.devonline.tictactoe.component.keypad;
+package academy.devonline.tictactoe.component.console.keypad;
 
-import academy.devonline.tictactoe.component.CellNumberConverter;
-import academy.devonline.tictactoe.model.Cell;
+import academy.devonline.tictactoe.component.console.CellNumberConverter;
+import academy.devonline.tictactoe.model.game.Cell;
 
 /**
  * @author devonline

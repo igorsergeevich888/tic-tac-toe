@@ -14,19 +14,23 @@
  * limitations under the License.
  */
 
-package academy.devonline.tictactoe.component;
+package academy.devonline.tictactoe;
 
+import academy.devonline.tictactoe.component.*;
+import academy.devonline.tictactoe.component.config.CommandLineArgumentParser;
+import academy.devonline.tictactoe.component.console.CellNumberConverter;
 import academy.devonline.tictactoe.component.console.ConsoleDataPrinter;
+import academy.devonline.tictactoe.component.console.ConsoleGameOverHandler;
 import academy.devonline.tictactoe.component.console.ConsoleUserInputReader;
-import academy.devonline.tictactoe.component.keypad.DesktopNumericKeypadCellNumberConverter;
+import academy.devonline.tictactoe.component.console.keypad.DesktopNumericKeypadCellNumberConverter;
 import academy.devonline.tictactoe.component.swing.GameWindow;
-import academy.devonline.tictactoe.model.Player;
-import academy.devonline.tictactoe.model.PlayerType;
-import academy.devonline.tictactoe.model.UserInterface;
+import academy.devonline.tictactoe.model.config.PlayerType;
+import academy.devonline.tictactoe.model.config.UserInterface;
+import academy.devonline.tictactoe.model.game.Player;
 
-import static academy.devonline.tictactoe.model.PlayerType.USER;
-import static academy.devonline.tictactoe.model.Sign.O;
-import static academy.devonline.tictactoe.model.Sign.X;
+import static academy.devonline.tictactoe.model.config.PlayerType.USER;
+import static academy.devonline.tictactoe.model.game.Sign.O;
+import static academy.devonline.tictactoe.model.game.Sign.X;
 
 /**
  * @author devonline
@@ -53,20 +57,21 @@ public class GameFactory {
         this.userInterface = userInterface1;
     }
 
-
-
     public Game create() {
         final DataPrinter dataPrinter;
         final UserInputReader userInputReader;
+        final GameOverHandler gameOverHandler;
 
         if (userInterface == UserInterface.GUI) {
             final GameWindow gameWindow = new GameWindow();
             dataPrinter = gameWindow;
             userInputReader = gameWindow;
+            gameOverHandler = gameWindow;
         } else {
             final CellNumberConverter cellNumberConverter = new DesktopNumericKeypadCellNumberConverter();
             dataPrinter = new ConsoleDataPrinter(cellNumberConverter);
             userInputReader = new ConsoleUserInputReader(cellNumberConverter, dataPrinter);
+            gameOverHandler = new ConsoleGameOverHandler(dataPrinter);
         }
 
         final Player player1;
@@ -95,7 +100,7 @@ public class GameFactory {
                 //new Player(O, new ComputerMove()),
                 new WinnerVerifier(),
                 new DrawVerifier(),
-                canSecondPlaterMakeFirstMove);
+                gameOverHandler, canSecondPlaterMakeFirstMove);
 
 
     }

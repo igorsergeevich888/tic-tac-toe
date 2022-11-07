@@ -14,15 +14,36 @@
  * limitations under the License.
  */
 
-package academy.devonline.tictactoe.model;
+package academy.devonline.tictactoe.model.game;
+
+import academy.devonline.tictactoe.component.Move;
 
 /**
  * @author devonline
  * @link http://devonline.academy/java
  */
-public enum PlayerType {
+public final class Player {
+    private final Sign sign;
 
-    USER,
+    private final Move move;
 
-    COMPUTER
+    public Player(final Sign sign, final Move move) {
+
+        this.sign = sign;
+        this.move = move;
+    }
+
+    public Sign getSign() {
+        return sign;
+    }
+
+
+    public void makeMove(final GameTable gameTable) {
+        move.make(gameTable, sign);
+    }
+
+    @Override
+    public String toString() {
+        return "'" + sign + "'";
+    }
 }

@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package academy.devonline.tictactoe.model;
+package academy.devonline.tictactoe.model.game;
 
 import java.util.Arrays;
 
-import static academy.devonline.tictactoe.model.Sign.EMPTY;
+import static academy.devonline.tictactoe.model.game.Sign.EMPTY;
 
 /**
  * @author devonline

@@ -14,26 +14,15 @@
  * limitations under the License.
  */
 
-package academy.devonline.tictactoe.model;
+package academy.devonline.tictactoe.model.config;
 
 /**
  * @author devonline
  * @link http://devonline.academy/java
  */
-public enum Sign {
+public enum UserInterface {
 
-    X,
+    GUI,
 
-    O,
-
-    EMPTY;
-
-    @Override
-    public String toString() {
-        if (this == EMPTY) {
-            return " ";
-        } else {
-            return name();
-        }
-    }
+    CONSOLE
 }

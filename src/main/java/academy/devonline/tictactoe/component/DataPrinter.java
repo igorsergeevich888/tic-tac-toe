@@ -16,18 +16,19 @@
 
 package academy.devonline.tictactoe.component;
 
-import academy.devonline.tictactoe.model.GameTable;
+import academy.devonline.tictactoe.model.game.GameTable;
 
 /**
  * @author devonline
  * @link http://devonline.academy/java
  */
 public interface DataPrinter {
+
+    void printInstructions();
+
     void printInfoMessage(String message);
 
     void printErrorMessage(String message);
-
-    void printMappingTable();
 
     void printGameTable(GameTable gameTable);
 

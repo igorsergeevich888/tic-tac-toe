@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-package academy.devonline.tictactoe.component;
+package academy.devonline.tictactoe.component.console;
 
-import academy.devonline.tictactoe.model.game.Cell;
-import academy.devonline.tictactoe.model.game.GameTable;
-import academy.devonline.tictactoe.model.game.Sign;
+import academy.devonline.tictactoe.component.DataPrinter;
+import academy.devonline.tictactoe.component.GameOverHandler;
 
-import java.util.Random;
+import java.util.Scanner;
 
 /**
  * @author devonline
  * @link http://devonline.academy/java
  */
-public class ComputerMove implements Move {
+public class ConsoleGameOverHandler implements GameOverHandler {
+
+    private final DataPrinter dataPrinter;
+
+    public ConsoleGameOverHandler(final DataPrinter dataPrinter) {
+        this.dataPrinter = dataPrinter;
+    }
+
 
     @Override
-    public void make(final GameTable gameTable, final Sign sign) {
+    public void gameOver() {
 
-        Random random = new Random();
-        while (true) {
-            final int row = random.nextInt(3);
-            final int col = random.nextInt(3);
-            final Cell randomCell = new Cell(row, col);
-            if (gameTable.isEmpty(randomCell)) {
-                gameTable.setSign(randomCell, sign);
-                return;
-            }
-        }
+        dataPrinter.printInfoMessage("GAME OVER!");
+        new Scanner(System.in).nextLine();
+
+
     }
 }

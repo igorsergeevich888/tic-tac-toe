@@ -16,30 +16,11 @@
 
 package academy.devonline.tictactoe.component;
 
-import academy.devonline.tictactoe.model.game.Cell;
-import academy.devonline.tictactoe.model.game.GameTable;
-import academy.devonline.tictactoe.model.game.Sign;
-
-import java.util.Random;
-
 /**
  * @author devonline
  * @link http://devonline.academy/java
  */
-public class ComputerMove implements Move {
+public interface GameOverHandler {
 
-    @Override
-    public void make(final GameTable gameTable, final Sign sign) {
-
-        Random random = new Random();
-        while (true) {
-            final int row = random.nextInt(3);
-            final int col = random.nextInt(3);
-            final Cell randomCell = new Cell(row, col);
-            if (gameTable.isEmpty(randomCell)) {
-                gameTable.setSign(randomCell, sign);
-                return;
-            }
-        }
-    }
+    void gameOver();
 }
