@@ -16,11 +16,8 @@
 
 package academy.devonline.tictactoe.component;
 
-import academy.devonline.tictactoe.model.game.Cell;
 import academy.devonline.tictactoe.model.game.GameTable;
 import academy.devonline.tictactoe.model.game.Sign;
-
-import java.util.Random;
 
 /**
  * @author devonline
@@ -40,11 +37,9 @@ public class ComputerMove implements Move {
             if (strategy.tryToMakeMove(gameTable,sign)) {
                 return;
             }
-
         }
         throw new IllegalArgumentException(
                 "Game table does not contain empty cells or invalid configurations for the computer mone strategies!"
         );
-
     }
 }
