@@ -23,6 +23,7 @@ import academy.devonline.tictactoe.component.console.ConsoleDataPrinter;
 import academy.devonline.tictactoe.component.console.ConsoleGameOverHandler;
 import academy.devonline.tictactoe.component.console.ConsoleUserInputReader;
 import academy.devonline.tictactoe.component.console.keypad.DesktopNumericKeypadCellNumberConverter;
+import academy.devonline.tictactoe.component.strategies.RandomComputerMoveStrategy;
 import academy.devonline.tictactoe.component.swing.GameWindow;
 import academy.devonline.tictactoe.model.config.PlayerType;
 import academy.devonline.tictactoe.model.config.UserInterface;
@@ -58,6 +59,10 @@ public class GameFactory {
     }
 
     public Game create() {
+        final ComputerMoveStrategy[] strategies = {
+                new RandomComputerMoveStrategy()
+        };
+
         final DataPrinter dataPrinter;
         final UserInputReader userInputReader;
         final GameOverHandler gameOverHandler;
@@ -75,11 +80,12 @@ public class GameFactory {
         }
 
         final Player player1;
+
         if (player1Type == USER) {
             player1 = new Player(X, new UserMove(userInputReader, dataPrinter));
 
         } else {
-            player1 = new Player(X, new ComputerMove());
+            player1 = new Player(X, new ComputerMove(strategies));
         }
 
         final Player player2;
@@ -87,7 +93,7 @@ public class GameFactory {
             player2 = new Player(O, new UserMove(userInputReader, dataPrinter));
 
         } else {
-            player2 = new Player(O, new ComputerMove());
+            player2 = new Player(O, new ComputerMove(strategies));
         }
 
         final boolean canSecondPlaterMakeFirstMove = player1Type != player2Type;
